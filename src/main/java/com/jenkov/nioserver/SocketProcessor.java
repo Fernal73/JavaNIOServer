@@ -14,10 +14,10 @@ public class SocketProcessor implements Runnable {
 
   private MessageBuffer readMessageBuffer =
       null; // todo   Not used now - but perhaps will be later - to check for space in the buffer
-            // before reading from sockets
+  // before reading from sockets
   private MessageBuffer writeMessageBuffer =
       null; // todo   Not used now - but perhaps will be later - to check for space in the buffer
-            // before reading from sockets (space for more to write?)
+  // before reading from sockets (space for more to write?)
 
   private IMessageReaderFactory messageReaderFactory = null;
 
@@ -35,9 +35,8 @@ public class SocketProcessor implements Runnable {
   private WriteProxy writeProxy = null;
 
   private long nextSocketId =
-      16
-          * 1024; // start incoming socket ids from 16K - reserve bottom ids for pre-defined sockets
-                  // (servers).
+      16 * 1024; // start incoming socket ids from 16K - reserve bottom ids for pre-defined sockets
+  // (servers).
 
   private Set<Socket> emptyToNonEmptySockets = new HashSet<>();
   private Set<Socket> nonEmptyToEmptySockets = new HashSet<>();
@@ -134,9 +133,8 @@ public class SocketProcessor implements Runnable {
         message.socketId = socket.socketId;
         this.messageProcessor.process(
             message,
-            this
-                .writeProxy); // the message processor will eventually push outgoing messages into
-                              // an IMessageWriter for this socket.
+            this.writeProxy); // the message processor will eventually push outgoing messages into
+        // an IMessageWriter for this socket.
       }
       fullMessages.clear();
     }

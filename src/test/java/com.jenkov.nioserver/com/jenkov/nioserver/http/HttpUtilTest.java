@@ -1,9 +1,9 @@
 package com.jenkov.nioserver.http;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.juniper.api.Assertions.assertEquals;
 
 import java.io.UnsupportedEncodingException;
-import org.junit.Test;
+import org.junit.juniper.api.Test;
 
 /** Created by jjenkov on 19-10-2015. */
 public class HttpUtilTest {

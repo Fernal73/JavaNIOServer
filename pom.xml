@@ -151,8 +151,7 @@
             <argline>-Xms1g -Xmx4g
             -XX:MaxMetaspaceSize=512m</argline>
             <argline>--illegal-access=deny</argline>
-            <!--add-opens lm/lm=ALL-UNNAMED</argline>-->
-            <useModulePath>false</useModulePath>
+            <useModulePath>true</useModulePath>
             <trimStackTrace>true</trimStackTrace>
             <useSystemClassLoader>true</useSystemClassLoader>
             <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory" />
@@ -195,8 +194,8 @@
                 <showWarnings>true</showWarnings>
                 <verbose>true</verbose>
                 <compilerArgs>
-                  <!--  <arg>-J-->
-                  <!--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>-->
+                  <arg>
+                  -J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
                   <arg>-Awarns</arg>
                 </compilerArgs>
               </configuration>
@@ -213,15 +212,15 @@
                 <release>${java.version}</release>
                 <compilerArguments>
                   <sourcepath>
-                  ${project.basedir}/src/test/java/</sourcepath>
+                  ${project.basedir}/src/test/java/com.jenkov.nioserver</sourcepath>
                   <Xmaxerrs>10000</Xmaxerrs>
                   <Xmaxwarns>10000</Xmaxwarns>
                 </compilerArguments>
                 <showWarnings>true</showWarnings>
                 <verbose>true</verbose>
                 <compilerArgs>
-                  <!--  <arg>-J-->
-                  <!--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>-->
+                  <arg>
+                  -J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
                   <arg>-Awarns</arg>
                 </compilerArgs>
               </configuration>
