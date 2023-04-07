@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.nio.channels.CancelledKeyException;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
@@ -26,7 +25,7 @@ public class SelectorTest {
     key1.cancel();
 
     assertThrows(
-        CancelledKeyException.class,
+        IllegalStateException.class,
         () -> {
           SelectionKey key2 = socketChannel.register(selector, SelectionKey.OP_WRITE);
           key2.cancel();
