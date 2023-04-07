@@ -5,7 +5,7 @@ import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
-import org.junit.juniper.api.Test;
+import org.junit.jupiter.api.Test;
 
 /** Created by jjenkov on 21-10-2015. */
 public class SelectorTest {

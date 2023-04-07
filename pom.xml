@@ -80,12 +80,6 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>commons-validator</groupId>
-        <artifactId>commons-validator</artifactId>
-        <version>1.7</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-launcher</artifactId>
         <version>1.9.2</version>
@@ -106,10 +100,6 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
-    <dependency>
-      <groupId>commons-validator</groupId>
-      <artifactId>commons-validator</artifactId>
-    </dependency>
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-launcher</artifactId>
@@ -194,8 +184,6 @@
                 <showWarnings>true</showWarnings>
                 <verbose>true</verbose>
                 <compilerArgs>
-                  <arg>
-                  -J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
                   <arg>-Awarns</arg>
                 </compilerArgs>
               </configuration>
@@ -219,8 +207,6 @@
                 <showWarnings>true</showWarnings>
                 <verbose>true</verbose>
                 <compilerArgs>
-                  <arg>
-                  -J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
                   <arg>-Awarns</arg>
                 </compilerArgs>
               </configuration>
