@@ -1,7 +1,10 @@
 package com.jenkov.nioserver;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.nio.channels.CancelledKeyException;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
@@ -22,7 +25,11 @@ public class SelectorTest {
     SelectionKey key1 = socketChannel.register(selector, SelectionKey.OP_WRITE);
     key1.cancel();
 
-    SelectionKey key2 = socketChannel.register(selector, SelectionKey.OP_WRITE);
-    key2.cancel();
+    assertThrows(
+        CancelledKeyException.class,
+        () -> {
+          SelectionKey key2 = socketChannel.register(selector, SelectionKey.OP_WRITE);
+          key2.cancel();
+        });
   }
 }
