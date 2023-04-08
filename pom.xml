@@ -390,6 +390,9 @@
                   <argument>
                   com.jenkov.nioserver/com.jenkov.nioserver.example.Main</argument>
                 </arguments>
+                <async>true</async>
+                <asyncDestroyOnShutdown>
+                true</asyncDestroyOnShutdown>
               </configuration>
             </execution>
           </executions>
