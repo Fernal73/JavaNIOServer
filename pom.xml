@@ -371,6 +371,29 @@
           <artifactId>versions-maven-plugin</artifactId>
           <version>${maven.versions.plugin.version}</version>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>3.1.0</version>
+          <executions>
+            <execution>
+              <id>exec-java-main</id>
+              <goals>
+                <goal>exec</goal>
+              </goals>
+              <configuration>
+                <executable>java</executable>
+                <arguments>
+                  <argument>--module-path</argument>
+                  <modulepath />
+                  <argument>--module</argument>
+                  <argument>
+                  com.jenkov.nioserver/com.jenkov.nioserver.example.Main</argument>
+                </arguments>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -407,6 +430,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
